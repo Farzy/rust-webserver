@@ -1,0 +1,71 @@
+drill --benchmark benchmarks/drill.yml --stats
+
+Threads 4
+Iterations 5
+Rampup 1
+Base URL http://localhost:7878
+
+Fetch index - Thread: 3 - Iteration: 0 http://localhost:7878/ 200 OK 7ms
+Fetch index - Thread: 2 - Iteration: 0 http://localhost:7878/ 200 OK 7ms
+Fetch index - Thread: 0 - Iteration: 0 http://localhost:7878/ 200 OK 7ms
+Fetch index - Thread: 1 - Iteration: 0 http://localhost:7878/ 200 OK 7ms
+Fetch slow page - Thread: 2 - Iteration: 0 http://localhost:7878/sleep 200 OK 1003ms
+Fetch slow page - Thread: 0 - Iteration: 0 http://localhost:7878/sleep 200 OK 1003ms
+Fetch slow page - Thread: 3 - Iteration: 0 http://localhost:7878/sleep 200 OK 1003ms
+Fetch slow page - Thread: 1 - Iteration: 0 http://localhost:7878/sleep 200 OK 1003ms
+Fetch index - Thread: 2 - Iteration: 1 http://localhost:7878/ 200 OK 3ms
+Fetch index - Thread: 3 - Iteration: 1 http://localhost:7878/ 200 OK 2ms
+Fetch index - Thread: 1 - Iteration: 1 http://localhost:7878/ 200 OK 2ms
+Fetch index - Thread: 0 - Iteration: 1 http://localhost:7878/ 200 OK 2ms
+Fetch slow page - Thread: 1 - Iteration: 1 http://localhost:7878/sleep 200 OK 1004ms
+Fetch slow page - Thread: 3 - Iteration: 1 http://localhost:7878/sleep 200 OK 1004ms
+Fetch slow page - Thread: 0 - Iteration: 1 http://localhost:7878/sleep 200 OK 1004ms
+Fetch slow page - Thread: 2 - Iteration: 1 http://localhost:7878/sleep 200 OK 1004ms
+Fetch index - Thread: 2 - Iteration: 2 http://localhost:7878/ 200 OK 3ms
+Fetch index - Thread: 3 - Iteration: 2 http://localhost:7878/ 200 OK 3ms
+Fetch index - Thread: 1 - Iteration: 2 http://localhost:7878/ 200 OK 3ms
+Fetch index - Thread: 0 - Iteration: 2 http://localhost:7878/ 200 OK 3ms
+Fetch slow page - Thread: 2 - Iteration: 2 http://localhost:7878/sleep 200 OK 1005ms
+Fetch slow page - Thread: 1 - Iteration: 2 http://localhost:7878/sleep 200 OK 1006ms
+Fetch slow page - Thread: 0 - Iteration: 2 http://localhost:7878/sleep 200 OK 1006ms
+Fetch index - Thread: 2 - Iteration: 3 http://localhost:7878/ 200 OK 1ms
+Fetch slow page - Thread: 3 - Iteration: 2 http://localhost:7878/sleep 200 OK 1006ms
+Fetch index - Thread: 1 - Iteration: 3 http://localhost:7878/ 200 OK 2ms
+Fetch index - Thread: 3 - Iteration: 3 http://localhost:7878/ 200 OK 2ms
+Fetch index - Thread: 0 - Iteration: 3 http://localhost:7878/ 200 OK 2ms
+Fetch slow page - Thread: 2 - Iteration: 3 http://localhost:7878/sleep 200 OK 1006ms
+Fetch slow page - Thread: 1 - Iteration: 3 http://localhost:7878/sleep 200 OK 1004ms
+Fetch slow page - Thread: 3 - Iteration: 3 http://localhost:7878/sleep 200 OK 1004ms
+Fetch slow page - Thread: 0 - Iteration: 3 http://localhost:7878/sleep 200 OK 1004ms
+Fetch index - Thread: 2 - Iteration: 4 http://localhost:7878/ 200 OK 2ms
+Fetch index - Thread: 1 - Iteration: 4 http://localhost:7878/ 200 OK 2ms
+Fetch index - Thread: 0 - Iteration: 4 http://localhost:7878/ 200 OK 2ms
+Fetch index - Thread: 3 - Iteration: 4 http://localhost:7878/ 200 OK 2ms
+Fetch slow page - Thread: 0 - Iteration: 4 http://localhost:7878/sleep 200 OK 1004ms
+Fetch slow page - Thread: 1 - Iteration: 4 http://localhost:7878/sleep 200 OK 1004ms
+Fetch slow page - Thread: 2 - Iteration: 4 http://localhost:7878/sleep 200 OK 1005ms
+Fetch slow page - Thread: 3 - Iteration: 4 http://localhost:7878/sleep 200 OK 1004ms
+
+Fetch index - Thread: {{ thread }} - Iteration: {{ iteration }} Total requests            20
+Fetch index - Thread: {{ thread }} - Iteration: {{ iteration }} Successful requests       20
+Fetch index - Thread: {{ thread }} - Iteration: {{ iteration }} Failed requests           0
+Fetch index - Thread: {{ thread }} - Iteration: {{ iteration }} Median time per request   2ms
+Fetch index - Thread: {{ thread }} - Iteration: {{ iteration }} Average time per request  3ms
+Fetch index - Thread: {{ thread }} - Iteration: {{ iteration }} Sample standard deviation 2ms
+
+Fetch slow page - Thread: {{ thread }} - Iteration: {{ iteration }} Total requests            20
+Fetch slow page - Thread: {{ thread }} - Iteration: {{ iteration }} Successful requests       20
+Fetch slow page - Thread: {{ thread }} - Iteration: {{ iteration }} Failed requests           0
+Fetch slow page - Thread: {{ thread }} - Iteration: {{ iteration }} Median time per request   1004ms
+Fetch slow page - Thread: {{ thread }} - Iteration: {{ iteration }} Average time per request  1004ms
+Fetch slow page - Thread: {{ thread }} - Iteration: {{ iteration }} Sample standard deviation 1ms
+
+Concurrency Level         4
+Time taken for tests      5.0 seconds
+Total requests            40
+Successful requests       40
+Failed requests           0
+Requests per second       7.93 [#/sec]
+Median time per request   1003ms
+Average time per request  504ms
+Sample standard deviation 501ms

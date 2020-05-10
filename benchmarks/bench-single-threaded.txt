@@ -1,3 +1,5 @@
+drill --benchmark benchmarks/drill.yml --stats
+
 Threads 4
 Iterations 5
 Rampup 1
