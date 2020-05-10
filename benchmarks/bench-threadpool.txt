@@ -1,0 +1,31 @@
+drill --benchmark benchmarks/drill.yml --stats --quiet
+
+Threads 10
+Iterations 5
+Rampup 1
+Base URL http://localhost:7878
+
+
+Fetch index               Total requests            50
+Fetch index               Successful requests       50
+Fetch index               Failed requests           0
+Fetch index               Median time per request   1003ms
+Fetch index               Average time per request  664ms
+Fetch index               Sample standard deviation 549ms
+
+Fetch slow page           Total requests            50
+Fetch slow page           Successful requests       50
+Fetch slow page           Failed requests           0
+Fetch slow page           Median time per request   2001ms
+Fetch slow page           Average time per request  1666ms
+Fetch slow page           Sample standard deviation 551ms
+
+Concurrency Level         10
+Time taken for tests      13.1 seconds
+Total requests            100
+Successful requests       100
+Failed requests           0
+Requests per second       7.66 [#/sec]
+Median time per request   1005ms
+Average time per request  1165ms
+Sample standard deviation 744ms
