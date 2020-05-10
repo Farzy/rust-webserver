@@ -1,14 +1,14 @@
 ---
-threads: 4
+threads: 10
 base: 'http://localhost:7878'
 iterations: 5
 rampup: 1
 
 plan:
-  - name: "Fetch index - Thread: {{ thread }} - Iteration: {{ iteration }}"
+  - name: Fetch index
     request:
       url: /
 
-  - name: "Fetch slow page - Thread: {{ thread }} - Iteration: {{ iteration }}"
+  - name: Fetch slow page
     request:
       url: /sleep
